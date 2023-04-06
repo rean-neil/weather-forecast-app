@@ -1,0 +1,121 @@
+.topbar {
+  background-color: #c1c1c1;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  .profile-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    .profile {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.login-container {
+  max-width: 600px;
+  margin: 100px auto 0;
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.search-box {
+  max-width: 400px;
+  margin: 100px auto 0;
+
+  input {
+    width: calc(100% - 40px);
+    border-radius: 20px;
+    padding: 12px 20px;
+  }
+
+  button {
+    display: block;
+    margin: 30px auto;
+  }
+}
+
+.result-container {
+  max-width: 800px;
+  margin: 50px auto 100px;
+
+  button {
+    display: block;
+    float: right;
+  }
+
+  .city-name {
+    font-weight: bold;
+    margin-top: 50px;
+  }
+}
+
+button {
+  border: none;
+  background-color: #5fa1d6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #3687c9;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
