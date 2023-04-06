@@ -9,6 +9,7 @@ import { TopBar } from "../components";
 const Weather = () => {
   const { city } = useParams();
   const [cities, setCities] = useState<City[]>([]);
+  const [cityNotFound, setCityNotFound] = useState(false);
   const [, setRefresh] = useState(0);
   const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ const Weather = () => {
       })
       .then((data) => {
         const cities = data.data;
+        setCityNotFound(!cities.length);
         cities.forEach((city: City) => {
           getCityWeatherForecast(city.longitude, city.latitude)
             .then((response) => {
@@ -71,6 +73,7 @@ const Weather = () => {
             </table>
           </div>
         ))}
+        {cityNotFound && <p className="city-not-found">City not found!</p>}
         <div>
           <button onClick={() => navigate("/")}>Back</button>
         </div>
