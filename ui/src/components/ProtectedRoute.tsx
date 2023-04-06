@@ -1,6 +1,7 @@
 import { getAccessToken, getUserData } from "../api";
 import { useContext, useEffect, useState } from "react";
 
+import LoadingAnimation from "./LoadingAnimation";
 import { Outlet } from "react-router-dom";
 import { UserContext } from "../context/user.context";
 
@@ -58,7 +59,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ element }) => {
       });
   };
 
-  return !loading ? <Outlet /> : <>Loading....</>;
+  return !loading ? <Outlet /> : <LoadingAnimation />;
 };
 
 export default ProtectedRoute;

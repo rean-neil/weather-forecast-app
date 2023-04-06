@@ -3,12 +3,13 @@ import { getCityWeatherForecast, getGeoLocation } from "../api";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { City } from "../model/Entities";
 import { TopBar } from "../components";
 
 const Weather = () => {
   const { city } = useParams();
-  const [cityDetails, setCityDetails] = useState<any[]>([]);
-  const [refresh, setRefresh] = useState(0);
+  const [cities, setCities] = useState<City[]>([]);
+  const [, setRefresh] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const Weather = () => {
       })
       .then((data) => {
         const cities = data.data;
-        cities.forEach((city: any) => {
+        cities.forEach((city: City) => {
           getCityWeatherForecast(city.longitude, city.latitude)
             .then((response) => {
               return response.json();
@@ -28,7 +29,7 @@ const Weather = () => {
               setRefresh((prev: number) => prev + 1);
             });
         });
-        setCityDetails(cities);
+        setCities(cities);
       });
   }, [city]);
 
@@ -36,11 +37,11 @@ const Weather = () => {
     <div>
       <TopBar />
       <div className="result-container">
-        {cityDetails.map((city, index0) => (
+        {cities.map((city, index0) => (
           <div key={index0}>
-            {cityDetails && (
+            {cities && (
               <p className="city-name">
-                {city?.city}, {city?.country}
+                {city.city}, {city.country}
               </p>
             )}
 
@@ -56,7 +57,7 @@ const Weather = () => {
                 </tr>
               </thead>
               <tbody>
-                {city.forecasts?.map((weather: any, index: number) => (
+                {city.forecasts?.map((weather, index) => (
                   <tr key={index}>
                     <td>{formatDate(weather.dt_txt)}</td>
                     <td>{kelvinToFahrenheit(weather.main.temp)}</td>

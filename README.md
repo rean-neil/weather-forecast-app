@@ -1,12 +1,6 @@
 
 # Weather Forecast App
 
-Welcome to my project! This is a [description of your project].
-
-## Table of Contents
-
--   [Installation](https://chat.openai.com/chat#installation)
--   [Usage](https://chat.openai.com/chat#usage)
 
 ## Installation
 

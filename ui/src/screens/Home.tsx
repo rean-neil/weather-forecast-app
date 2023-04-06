@@ -23,8 +23,9 @@ const Home = () => {
       <TopBar />
       <div className="search-box">
         <input
+          placeholder="Search city"
           onChange={(e) => setCity(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyPress}
         />
         <button onClick={handleSeatch}>Display Weather</button>
       </div>

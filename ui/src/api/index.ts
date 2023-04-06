@@ -20,12 +20,12 @@ export const getGeoLocation = (city: string) => {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "3038d41817mshe9ebb47037edf95p137bc1jsn6817a04ea84e",
+      "X-RapidAPI-Key": process.env.REACT_APP_GEOLOCATION_API_KEY as string,
       "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
     },
   };
   return fetch(
-    process.env.REACT_APP_GEOLOCATION_API +
+    process.env.REACT_APP_GEOLOCATION_API_BASE_URL +
       `/cities?minPopulation=200000&namePrefix=${city}`,
     options
   );

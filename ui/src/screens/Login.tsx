@@ -23,7 +23,7 @@ const Login = () => {
           your Github user to use the application and view the weather in your
           city.
         </p>
-        <button onClick={handleLogin}>Login with GitHub</button>
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );

@@ -18,11 +18,11 @@ const TopBar = () => {
             src={process.env.PUBLIC_URL + "/cloudy.png"}
             alt="Logo"
           />
-          <p>Weather Forecast</p>
+          <p className="hide-mobile">Weather Forecast</p>
         </div>
         {user && (
           <div className="profile-container">
-            <div className="profile">
+            <div className="profile hide-mobile">
               <img className="logo" src={user?.avatar_url} alt="Logo" />
               {user?.login}
             </div>
